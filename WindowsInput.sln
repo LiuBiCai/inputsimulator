@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsInput", "WindowsInput\WindowsInput.csproj", "{3549CD6F-80F8-450F-B99E-CF0A736B1F2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsInput.Tests", "WindowsInput.Tests\WindowsInput.Tests.csproj", "{93982D2F-BEAD-49F7-86A9-C68159410F28}"
@@ -11,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C29453
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{2F156E43-CA15-4739-ACB6-B38223C1BA67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,8 +30,15 @@ Global
 		{93982D2F-BEAD-49F7-86A9-C68159410F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93982D2F-BEAD-49F7-86A9-C68159410F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93982D2F-BEAD-49F7-86A9-C68159410F28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F156E43-CA15-4739-ACB6-B38223C1BA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F156E43-CA15-4739-ACB6-B38223C1BA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F156E43-CA15-4739-ACB6-B38223C1BA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F156E43-CA15-4739-ACB6-B38223C1BA67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C14469DA-E1B9-431D-80E6-8548B4CAA3D9}
 	EndGlobalSection
 EndGlobal

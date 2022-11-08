@@ -89,6 +89,20 @@ namespace WindowsInput
             return this;
         }
 
+        private int DeskHeight = 0;
+        private int DeskWidth = 0;
+        public IMouseSimulator SetDesk(int height,int width)
+        {
+            DeskHeight = height;
+            DeskWidth = width;
+            return this;
+        }
+        public IMouseSimulator MoveMoseToDesk(int X,int Y)
+        {
+
+            return this;
+        }
+
         /// <summary>
         /// Simulates mouse movement to the specified location on the Virtual Desktop which includes all active displays.
         /// </summary>

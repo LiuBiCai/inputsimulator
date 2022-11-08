@@ -4,11 +4,16 @@ using WindowsInput.Native;
 
 namespace WindowsInput
 {
+
+#pragma warning disable CS1574 // XML 注释中有无法解析的 cref 特性
     /// <summary>
     /// Implements the <see cref="IInputMessageDispatcher"/> by calling <see cref="NativeMethods.SendInput"/>.
     /// </summary>
     internal class WindowsInputMessageDispatcher : IInputMessageDispatcher
+#pragma warning restore CS1574 // XML 注释中有无法解析的 cref 特性
     {
+
+#pragma warning disable CS1574 // XML 注释中有无法解析的 cref 特性
         /// <summary>
         /// Dispatches the specified list of <see cref="INPUT"/> messages in their specified order by issuing a single called to <see cref="NativeMethods.SendInput"/>.
         /// </summary>
@@ -17,6 +22,7 @@ namespace WindowsInput
         /// <exception cref="ArgumentNullException">If the <paramref name="inputs"/> array is null.</exception>
         /// <exception cref="Exception">If the any of the commands in the <paramref name="inputs"/> array could not be sent successfully.</exception>
         public void DispatchInput(INPUT[] inputs)
+#pragma warning restore CS1574 // XML 注释中有无法解析的 cref 特性
         {
             if (inputs == null) throw new ArgumentNullException("inputs");
             if (inputs.Length == 0) throw new ArgumentException("The input array was empty", "inputs");
