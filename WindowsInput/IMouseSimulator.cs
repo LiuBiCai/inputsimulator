@@ -13,12 +13,18 @@ namespace WindowsInput
         /// <value>The <see cref="IKeyboardSimulator"/> instance.</value>
         IKeyboardSimulator Keyboard { get; }
         /// <summary>
-        /// Simulates mouse movement to the specified location on the primary display device.
+        /// 设置桌面长宽
         /// </summary>
-        /// <param name="height">The destination's absolute X-coordinate on the primary display device where 0 is the extreme left hand side of the display device and 65535 is the extreme right hand side of the display device.</param>
-        /// <param name="width">The destination's absolute Y-coordinate on the primary display device where 0 is the top of the display device and 65535 is the bottom of the display device.</param>
-        IMouseSimulator SetDesk(int height,int width);
-
+        ///
+        /// <param name="width">桌面长</param>
+        ///  <param name="height">桌面高</param>
+        IMouseSimulator SetDesk(int width,int height);
+        /// <summary>
+        /// 鼠标在桌面移动
+        /// </summary>
+        /// <param name="X">X</param>
+        /// <param name="Y">Y</param>
+        IMouseSimulator MoveMoseToDesk(int X, int Y);
 
         /// <summary>
         /// Simulates mouse movement by the specified distance measured as a delta from the current mouse location in pixels.
@@ -128,8 +134,6 @@ namespace WindowsInput
         /// </summary>
         /// <param name="timeout">The time to wait.</param>
         IMouseSimulator Sleep(TimeSpan timeout);
-
-
-        
+      
     }
 }

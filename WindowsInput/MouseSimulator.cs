@@ -89,18 +89,36 @@ namespace WindowsInput
             return this;
         }
 
+       
         private int DeskHeight = 0;
         private int DeskWidth = 0;
-        public IMouseSimulator SetDesk(int height,int width)
-        {
-            DeskHeight = height;
-            DeskWidth = width;
-            return this;
-        }
-        public IMouseSimulator MoveMoseToDesk(int X,int Y)
+        /// <summary>
+        /// 设置桌面长宽
+        /// </summary>
+        /// <param name="width">桌面长</param>
+        /// <param name="height">桌面</param>
+        
+        public IMouseSimulator SetDesk(int width,int height)
         {
 
+            DeskWidth = width;
+            DeskHeight = height;
+           
             return this;
+        }
+        /// <summary>
+        /// 设置桌面长宽
+        /// </summary>
+        /// <param name="X">桌面高</param>
+        /// <param name="Y">桌面长</param>
+        public IMouseSimulator MoveMoseToDesk(int X,int Y)
+        {
+            int x = X * 65535 / DeskWidth;
+            int y= Y * 65535 / DeskHeight;
+            var inputList = new InputBuilder().AddAbsoluteMouseMovement(x, y).ToArray();
+            SendSimulatedInput(inputList);
+            return this;
+           
         }
 
         /// <summary>

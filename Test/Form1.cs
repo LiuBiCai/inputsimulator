@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsInput;
+using WindowsInput.Native;
 using WindowsInput.Tests;
 
 namespace Test
@@ -27,14 +28,17 @@ namespace Test
         private void button1_Click(object sender, EventArgs e)
         {
             var pos = tbAimPos.Text.Split(',');
-
-            sim.Mouse
+            sim.Mouse.SetDesk(2015, 1343);
+            sim.Mouse.MoveMoseToDesk(0, 0)
+                .Sleep(1000)
+                .MoveMoseToDesk(int.Parse(pos[0]), int.Parse(pos[1]));
+            /*sim.Mouse
                .MoveMouseTo(0, 0)
                .Sleep(1000)
                .MoveMouseTo(int.Parse(pos[0])*65535/2015, int.Parse(pos[1]) * 65535 / 1343);
                //.Sleep(1000)
                //.MoveMouseTo(65535 / 2, 65535 / 2);
-
+            */
         }
        
         
@@ -107,7 +111,36 @@ namespace Test
 
         private void btnPSNTest_Click(object sender, EventArgs e)
         {
-            sim.Mouse.MoveMouseTo
+            sim.Mouse.SetDesk(2015, 1343);
+            sim.Mouse.MoveMouseTo(0, 0)
+                .Sleep(1000)
+                .MoveMoseToDesk(1751, 133) //PSN Login
+                .Sleep(500)
+                .LeftButtonClick()
+                .Sleep(10000)
+                .MoveMoseToDesk(1004, 632)
+                .Sleep(500)
+                .LeftButtonClick()
+                .Sleep(500);
+            sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LCONTROL, VirtualKeyCode.VK_A)
+                .Sleep(1000)
+                .TextEntry("mallipaisinb@mail.com")
+                .KeyPress(VirtualKeyCode.RETURN)
+                .Sleep(1000);
+
+            sim.Mouse.MoveMoseToDesk(1034, 663)
+                .Sleep(500)
+                .LeftButtonClick()
+                .Sleep(1000);
+            sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.LCONTROL, VirtualKeyCode.VK_A)
+                .Sleep(1000)
+                .TextEntry("Qwe147258")
+                .KeyPress(VirtualKeyCode.RETURN)
+                .Sleep(1000);
+
+
+
+
         }
     }
 }
